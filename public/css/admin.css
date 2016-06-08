@@ -1,0 +1,583 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.glyphicon {
+
+  
+}
+
+#site-wrap {
+    width: 1096px;
+    margin: 0 auto;
+}
+
+.admin-form {
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 300px;
+    position: relative;
+    padding: 50px;
+    background-color: #d2d2d2;
+
+}
+
+.admin-form-field {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding: 0 7px;
+    height: 40px;
+    width: 340px;
+    font-size: 18px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.admin-form-field:focus {
+    border: 2px solid green;
+}
+
+.save-option-message {
+    display: block;
+    color: green;
+    position: absolute;
+    top: 8px;
+    right: -132px;
+    transition: all 0.8s ease-out 0s;
+    -moz-transition: all 0.8s ease-out 0s;
+    -webkit-transition: all 0.8s ease-out 0s;
+    z-index: 1;
+    opacity: 0;
+}
+
+.save-button-wrap {
+    width: 110px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.admin-standart-button {
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #337ab7;
+    border: 1px solid #2e6da4;
+    border-radius: 6px;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.admin-standart-button[disabled="disabled"] {
+    opacity: 0.6;
+}
+
+.admin-standart-button:hover {
+    background-color: #204d74;
+}
+
+.admin-standart-button[disabled="disabled"]:hover {
+    background-color: #337ab7;
+}
+
+.admin-form-submit {
+
+}
+
+.admin-form-submit:focus {
+    border: 1px solid white;
+}
+
+.show-password {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    box-sizing: border-box;
+    text-align: center;
+    list-style: none;
+    color: #333;
+}
+
+.show-password:before {
+    content: "\e105";
+}
+
+.admin-page {
+    height: 100%;
+}
+
+.form-error {
+    color: red;
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.admin-header {
+    height: 100px;
+    background: #ccc;
+    position: relative;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+#logout-btn {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+.option-sections {
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.option-title {
+    text-align: center;
+
+}
+
+#amount-time {
+    border: 0;
+    outline: none;
+    display: block;
+    font-size: 22px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#slider-time-work {
+    width: 600px;
+    margin: 0 auto 20px;
+}
+
+#save-option-changed {
+
+}
+
+#weekend-form {
+
+}
+
+#weekend-form label {
+    font-size: 20px;
+    margin-right: 7px;
+}
+
+#weekend-form li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.xdsoft_time {
+  background: #f5f5f5;
+  color: #666; }
+
+.xdsoft_time_close {
+  background: #d85656 !important;
+  color: #fff !important; }
+
+.xdsoft_timepicker .xdsoft_time_close:hover {
+  background: #d85656 !important;
+  color: #fff !important; }
+
+  .my_disabled {
+  opacity: 0.5; }
+
+  .admin-title {
+    text-align: center;
+    margin-top: -10px;
+  }
+
+.timepicker-wrap {
+    margin: 0 auto;
+    padding: 80px;
+    display: inline-block;
+}
+
+.xdsoft_datetimepicker {
+    transform: scale(1.5);
+    margin:-left: 35px;
+    min-height: 220px;
+}
+
+.day-any-plane {
+    background: #8cdd69!important;
+}
+
+.day-weekend {
+    background: #c2c61b!important;
+}
+
+.day-close, .hour-close {
+    background: #a780f2 !important;
+}
+
+.day-right-side {
+    float: right;
+    width: 54%;
+    margin-top: 26px;
+}
+
+.wrap-of-day-info {
+    display: block;
+    float: left;
+}
+
+.day-info-list {
+    padding: 0;
+    margin: 0;
+}
+
+.day-info-list li {
+    list-style: none;
+    line-height: 28px;
+    font-size: 18px;
+    width: 300px;
+    border-bottom: 1px solid #ccc;
+}
+
+.day-info-list li div {
+    display: inline-block;
+    width: 150px;
+}
+
+.day-info-list li span {
+    font-weight: bold;
+}
+
+.day-info-empy-title {
+    font-size: 21px;
+    color: red;
+    margin: 0px;
+    display: none;
+}
+
+.day-function {
+    display: block;
+    float: left;
+    margin-right: 40px;
+}
+
+.day-function button {
+    display: block;
+    margin-top: 4px;
+    padding: 4px;
+    width: 200px;
+}
+
+.day-function-disabled {
+    opacity: 0.5;
+}
+
+.day-info-comment-block {
+    display: none;
+}
+
+.price-list .price-list-button-td {
+    padding: 3px;
+    border: 0;
+}
+
+.price-list td, .price-list th {
+    border: 1px solid black;
+    padding: 10px 20px;
+}
+
+.price-list button {
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+}
+
+.standart-table {
+    margin: 0 auto;
+    min-width: 600px;
+    margin-bottom: 20px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.standart-table td, .standart-table th {
+    padding: 8px;
+    border: 1px solid #ddd;
+    line-height: 1.42857143;
+    vertical-align: top;
+}
+
+.standart-table th {
+    border-bottom-width: 2px;
+}
+
+.table-history {
+    width: 100%;
+}
+
+
+.price-subitem td:first-child {
+    padding-left: 40px;
+}
+
+.price-item-group {
+    background: #ccc;
+    border-top: 2px solid #939393;
+    border-right: 2px solid #939393;
+    border-left: 2px solid #939393;
+    font-size: 20px;
+}
+
+.price-subitem {
+    background: #eee;
+    border-right: 2px solid #939393;
+    border-left: 2px solid #939393;
+}
+
+.price-subitem+tr:not(.price-subitem) {
+    border-top: 2px solid #939393;
+}
+
+.price-item {
+    font-size: 20px;
+}
+
+.price-list {
+    width: 90%;
+}
+
+.wrap-window {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(62, 62, 62, 0.76);
+    z-index: 40000;
+}
+
+.inside-window {
+    position: fixed;
+    top: 250px;
+    left: 400px;
+    width: 600px;
+    height: 450px;
+    background: #fff;
+    z-index: 40000;
+    box-shadow: 0 0 10px 4px #aeaeae;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.btn-close-inside-window {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 25px;
+    height: 25px;
+    background: url('../images/button-close.png') no-repeat;
+    background-size: 100% 100%;
+    border: 0;
+}
+
+.btn-close-inside-window:hover {
+    width: 26px;
+    height: 26px;
+    top: 6px;
+    right: 6px; 
+}
+
+.inside-window h2 {
+    text-align: center;
+}
+
+#inside-window-form {
+
+}
+
+.inside-window #select-client {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 70%;
+    height: 235px;
+}
+
+.inside-window #select-client option {
+    
+}
+
+.inside-window .commit-field {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+    width: 70%;
+}
+
+.inside-window .btn-save-enroll {
+    margin: 0 auto;
+    display: block;
+}
+
+#window-calc-price.wrap-window .inside-window {
+    width: 90%;
+    min-height: 90%;
+    overflow-y: scroll;
+}
+
+.service-list {
+    width: 98%;
+    height: 400px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 0;
+}
+
+.service-list-item {
+    border-bottom: 1px solid #9c9c9c;
+    line-height: 19px;
+    list-style: none;
+    position: relative;
+    margin-bottom: 5px;
+    padding-top: 5px;
+}
+
+.service-list-item:not(.service-group) {
+    height: 30px;
+}
+
+.service-list-subitem {
+    position: relative;
+    padding-top: 5px;
+    height: 22px;
+    border-bottom: 1px solid #fff;
+}
+
+
+.service-list-item span {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.name-block {
+    width: 83%;
+    display: block;
+}
+
+.service-list-subitem .price-block {
+    right: 10.2%!important;
+}
+
+.service-list-subitem .btn-block {
+    right: 5.4%!important;
+}
+
+.price-block {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 10%;
+}
+
+
+
+.btn-block {
+    display: block;
+    position: absolute;
+    top: 1px;
+    right: 5.2%;
+    line-height: 23px;
+}
+
+.service-group {
+    background: #ccc;
+}
+
+.service-list .add-service-item {
+    height: 25px;
+    width: 25px;
+    line-height: 20px;
+}
+
+#output-list {
+    font-size: 18px;
+    width: 98%;
+    height: 28%;
+    border: 1px solid black;
+    overflow-y: scroll;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#output-list li {
+    list-style: none;
+    position: relative;
+    margin-bottom: 3px;
+    min-height: 30px;
+    background: #ddd;
+    line-height: 30px;
+}
+
+.btn-save-price {
+    display: block;
+    margin: 0 auto 30px;
+}
+
+.output-price {
+    font-size: 30px;
+    position: absolute;
+    right: 30px;
+}
+
+.output-price span {
+    font-size: 40px;
+}
+
+#output-list .price-block {
+    top: 0;
+}
+
+.btn-add-service-group {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.btn-add-service-group button {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+#page-menu {
+    position: fixed;
+    top: 200px;
+    left: 20px;
+    z-index: 500000;
+    background: #fff;
+}
+
+#page-menu a {
+    display: block;
+    text-decoration: none;
+    font-size: 24px;
+    margin-top: 10px;
+    color: #333;
+}
+
+#page-menu a:hover {
+    color: #515151;
+}

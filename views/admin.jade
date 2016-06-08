@@ -1,0 +1,208 @@
+extends layout-admin
+
+block content
+    nav#page-menu
+        a(href="#time-work") Години прийому
+        a(href="#weekend-option") Вихідні дні
+        a(href="#plane-option") План записів
+        a(href="#price-list") Ціни на послуги
+        a(href="#history") Історія прийомів
+    div#window-record-client.wrap-window
+        div.inside-window
+            button.btn-close-inside-window
+            h2 Виберіть клієнта та введіть замітку
+            form#wrap-window-form
+                select(multiple="multiple", id="select-client")
+                textarea.commit-field(placeholder="Замітка")
+            button.btn-save-enroll.admin-standart-button Записатись
+    div#window-calc-price.wrap-window
+        div.inside-window
+            button.btn-close-inside-window
+            h3 Список доступних послуг:
+            div
+                ul.service-list
+                    each item in price_list
+                        if item.price != undefined
+                            li.service-list-item
+                                span.name-block= item.name
+                                span.price-block= item.price + " грн."
+                                span.btn-block
+                                    button.add-service-item(title="Додати послугу") +
+                        else
+                            li.service-list-item.service-group
+                                span.name-block= item.name
+                                ul
+                                    each subitem in item.list
+                                        li.service-list-subitem
+                                            span.name-block= subitem.name
+                                            span.price-block= subitem.price + " грн."
+                                            span.btn-block
+                                                button.add-service-item(title="Додати послугу") +
+
+            h3 Вибрані послуги:
+            ul#output-list
+                li
+                    span.name-block Лікувальна прокладка з кальцієм при глибокому карієсі
+                    span.price-block 20 грн.
+                    span.btn-block
+                        button.remove-service-item(title="Відмінити послугу") -
+                li
+                    span.name-block Лікувальна прокладка з кальцієм при глибокому карієсі
+                    span.price-block 20 грн.
+                    span.btn-block
+                        button.remove-service-item(title="Відмінити послугу") -
+                li
+                    span.name-block Лікувальна прокладка з кальцієм при глибокому карієсі
+                    span.price-block 20 грн.
+                    span.btn-block
+                        button.remove-service-item(title="Відмінити послугу") -
+                li
+                    span.name-block Лікувальна прокладка з кальцієм при глибокому карієсі
+                    span.price-block 20 грн.
+                    span.btn-block
+                        button.remove-service-item(title="Відмінити послугу") -
+            div.output-price Разом: 
+                span 80 грн.
+            button.btn-save-price.admin-standart-button Підтвердити
+
+    div(class="admin-page")
+        div(class="admin-header")
+            a(href="http://localhost:3000/", class="admin-standart-button") На головну
+            h1(class="admin-title") Адмін панель
+            button(id="logout-btn", class="admin-standart-button") Вийти
+        section(class="option-sections", id="time-work-option")
+            a(name="time-work")
+            h2(class="option-title") Години прийому
+            p
+                input(type="text", id="amount-time", readonly="readonly")
+            div(id="slider-time-work")
+            div(class="save-button-wrap")
+                button(id="save-option-time-work", class="admin-standart-button") Зберегти
+                span(class="save-option-message") Зміни збережено
+        section(class="option-sections", id="weekend-option")
+            a(name="weekend-option")
+            h2(class="option-title") Вихідні дні
+            form(id="weekend-form", name="weekend-form")
+                ul
+                    li
+                        label(for="weekend-checks") Понеділок
+                        input(type="checkbox", name="weekend-checks", id="weekend-day1")
+                    li
+                        label(for="weekend-checks") Вівторок
+                        input(type="checkbox", name="weekend-checks", id="weekend-day2")
+                    li
+                        label(for="weekend-checks") Середа
+                        input(type="checkbox", name="weekend-checks", id="weekend-day3")
+                    li
+                        label(for="weekend-checks") Четвер
+                        input(type="checkbox", name="weekend-checks", id="weekend-day4")
+                    li
+                        label(for="weekend-checks") Пятниця
+                        input(type="checkbox", name="weekend-checks", id="weekend-day5")
+                    li
+                        label(for="weekend-checks") Субота
+                        input(type="checkbox", name="weekend-checks", id="weekend-day6")
+                    li
+                        label(for="weekend-checks") Неділя
+                        input(type="checkbox", name="weekend-checks", id="weekend-day0")
+            div(class="save-button-wrap")
+                button(id="save-option-weekend", class="admin-standart-button") Зберегти
+                span(class="save-option-message") Зміни збережено
+        section(class="option-sections", id="plane-option")
+            a(name="plane-option")
+            h2(class="option-title") План записів
+            div(class="timepicker-wrap")
+                div(id="plane-timepicker")
+            div(class="day-right-side")
+                div(class="day-function")
+                    button(class="day-function-close-hour admin-standart-button") Заблокувати годину
+                    button(class="day-function-open-hour admin-standart-button") Розблокувати годину
+                    button(class="day-function-close-day admin-standart-button") Заблокувати день
+                    button(class="day-function-open-day admin-standart-button") Розблокувати день
+                    button(class="day-function-cancel-enroll admin-standart-button") Відмінити прийом
+                    button(class="day-function-new-enroll admin-standart-button") Записатись від імені клієнта
+                    button(class="day-function-calculate-price admin-standart-button") Обрахувати ціну прийому
+                div(class="wrap-of-day-info")
+                    h4(class="day-info-empy-title") Немає даних
+                    div(class="day-info-comment-block") Коментар до години: 
+                        p
+                    ul(class="day-info-list")
+                        li(class="day-info-name")
+                            div Ім'я: 
+                            span
+                        li(class="day-info-surname")
+                            div Фамілія: 
+                            span
+                        li(class="day-info-email")
+                            div Email: 
+                            span
+                        li(class="day-info-phone")
+                            div Телефон: 
+                            span
+                        li(class="day-info-comment")
+                            div Замітка: 
+                            span
+                        li(class="day-info-price")
+                            div Ціна прийому: 
+                            span
+        section(class="option-sections", id="price-list-section")
+            a(name="price-list")
+            h2(class="option-title") Ціни на послуги
+            table.price-list.standart-table#price-list-table
+                tr
+                    th Назва
+                    th Ціна
+                    td.price-list-button-td
+                each item in price_list
+                    if item.price != undefined
+                        tr.price-item
+                            td(contenteditable="true")= item.name
+                            td(contenteditable="true")=item.price
+                            td.price-list-button-td
+                                button(class="remove-service-item", title="Видалити послугу") -
+                    else
+                        tr.price-item-group
+                            td(contenteditable="true")= item.name + " : "
+                            td
+                            td.price-list-button-td
+                                    button(class="remove-service-group", title="Видалити групу послуг") -
+                            td.price-list-button-td
+                                    button(class="add-service-item", title="Додати послугу") +
+                        each subitem in item.list
+                            tr.price-subitem
+                                   
+                                td(contenteditable="true")= subitem.name
+                                td(contenteditable="true")= subitem.price
+                                td.price-list-button-td
+                                    button(class="remove-service-item", title="Видалити послугу") -
+                                td
+            div.btn-add-service-group
+                button#add-new-service(title="Додати послугу") Додати послугу
+                button#add-new-group-service(title="Додати групу послуг") Додати групу послуг
+            div(class="save-button-wrap")
+                button(id="save-option-prices", class="admin-standart-button") Зберегти
+        section(class="option-sections", id="history-section")
+            a(name="history")
+            h2(class="option-title") Історія прийомів
+            - var n = 1;
+            table.table-history.standart-table
+                tr
+                    th №
+                    th Дата
+                    th Прізвище ім'я
+                    th E-mail
+                    th Телефон
+                    th Замітка
+                    th Ціна прийому
+                each item in enroll_list
+                    tr
+                        td= n++
+                        td= item.year + "." + item.month + "." + item.day + " : " + item.hour
+                        td= item.surname + " " + item.name
+                        td= item.email
+                        td= item.phone 
+                        td= item.comment
+                        if item.price == undefined
+                            td= "не обраховано"
+                        else
+                            td= item.price

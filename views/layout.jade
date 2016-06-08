@@ -1,0 +1,18 @@
+doctype html
+html(lang="ua")
+  head
+    title Стоматологічний кабінет
+    meta(charset="utf-8")
+    meta(name="description", content="This is cabinet")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    //[if lt IE 9]
+        <script src="js/html5.js"></script>
+        [endif]
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src="js/jquery.js")
+  body
+    div(class="site-wrapper")
+        include header-layout.jade
+        block content
+        include footer-layout.jade

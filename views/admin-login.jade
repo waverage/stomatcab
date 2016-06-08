@@ -1,0 +1,6 @@
+extends layout-admin-login
+
+block content
+    include parts/admin-signin-form
+    if fail
+        p Неправельний пароль

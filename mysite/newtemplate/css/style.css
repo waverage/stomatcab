@@ -1,0 +1,161 @@
+@font-face {
+  font-family: 'Droid Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Droid Serif"), local("DroidSerif"), url(http://fonts.gstatic.com/s/droidserif/v6/0AKsP294HTD-nvJgucYTaI4P5ICox8Kq3LLUNMylGO4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
+#site-wrap {
+  background: #F7FCFD;
+  background: linear-gradient(top, #C2E8F0 0, #FFFFFF 250px) no-repeat;
+  background: -webkit-linear-gradient(top, #C2E8F0 0, #FFFFFF 250px) no-repeat;
+  background: -moz-linear-gradient(top, #C2E8F0 0, #FFFFFF 250px) no-repeat;
+  background: -o-linear-gradient(top, #C2E8F0 0, #FFFFFF 250px) no-repeat;
+  background: -ms-linear-gradient(top, #C2E8F0 0, #FFFFFF 250px) no-repeat;
+  background: linear-gradient(top, #C2E8F0 0, #FFFFFF 250px) no-repeat;
+  -svg-background: linear-gradient(top, #C2E8F0 0, #FFFFFF 250px) no-repeat;
+  background-attachment: fixed !important;
+  margin: 0 auto;
+  font-size: 13px;
+  font-family: 'Droid Serif', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 1px;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  left: 0;
+  top: 0;
+  cursor: default;
+  overflow: hidden; }
+
+.web-header {
+  height: 200px;
+  background: url("../img/header.png") center top no-repeat; }
+
+.header-wrap {
+  width: 1096px;
+  margin: 0 auto;
+  height: 200px; }
+
+.image-logotip {
+  float: left; }
+
+.header-titles {
+  text-align: right;
+  float: right;
+  margin-top: 70px; }
+
+.main-title a {
+  font-size: 32px;
+  font-family: 'Droid Serif', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  color: #185663 !important;
+  white-space: nowrap; }
+
+.main-title {
+  margin: 0;
+  padding: 0 20px 10px 0; }
+
+.second-title {
+  font-size: 16px;
+  font-family: 'Droid Serif', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0;
+  margin: 0 30px 0 0;
+  color: #185663 !important;
+  font-weight: normal;
+  text-align: right; }
+
+.main-menu {
+  background: #293638;
+  background: linear-gradient(top, #293638 0, #2B393B 40%, #2B393B 85%, #1A2223 100%) no-repeat;
+  background: -webkit-linear-gradient(top, #293638 0, #2B393B 40%, #2B393B 85%, #1A2223 100%) no-repeat;
+  background: -moz-linear-gradient(top, #293638 0, #2B393B 40%, #2B393B 85%, #1A2223 100%) no-repeat;
+  background: -o-linear-gradient(top, #293638 0, #2B393B 40%, #2B393B 85%, #1A2223 100%) no-repeat;
+  background: -ms-linear-gradient(top, #293638 0, #2B393B 40%, #2B393B 85%, #1A2223 100%) no-repeat;
+  background: linear-gradient(top, #293638 0, #2B393B 40%, #2B393B 85%, #1A2223 100%) no-repeat;
+  -svg-background: linear-gradient(top, #293638 0, #2B393B 40%, #2B393B 85%, #1A2223 100%) no-repeat;
+  border-bottom: 1px solid rgba(193, 207, 209, 0.8);
+  margin: 15px auto 0;
+  height: 50px; }
+
+.main-menu-wrap {
+  width: 1096px;
+  margin: 0 auto;
+  padding: 0; }
+
+.main-menu-item {
+  display: block;
+  float: left;
+  line-height: 50px;
+  text-align: center;
+  padding: 0; }
+  .main-menu-item a {
+    display: block;
+    padding: 0 40px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: 'Droid Serif', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+    color: #C9D9D9;
+    height: 50px; }
+  .main-menu-item a:hover {
+    background: #7BA3A1;
+    text-decoration: none; }
+
+.item-active a {
+  background: #46BBD2;
+  color: #1F2D2C; }
+
+.item-active a:hover {
+  background: #7BA3A1;
+  text-decoration: none; }
+
+.page-content {
+  margin: 0 auto;
+  width: 1096px;
+  min-height: 100px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.15); }
+
+.web-footer {
+  width: 1096px;
+  margin: 0 auto;
+  height: 77px;
+  background: #293638;
+  background: linear-gradient(top, #344446 0, #273335 40%, #253032 50%, #273335 60%, #344446 100%) no-repeat;
+  background: -webkit-linear-gradient(top, #344446 0, #273335 40%, #253032 50%, #273335 60%, #344446 100%) no-repeat;
+  background: -moz-linear-gradient(top, #344446 0, #273335 40%, #253032 50%, #273335 60%, #344446 100%) no-repeat;
+  background: -o-linear-gradient(top, #344446 0, #273335 40%, #253032 50%, #273335 60%, #344446 100%) no-repeat;
+  background: -ms-linear-gradient(top, #344446 0, #273335 40%, #253032 50%, #273335 60%, #344446 100%) no-repeat;
+  background: linear-gradient(top, #344446 0, #273335 40%, #253032 50%, #273335 60%, #344446 100%) no-repeat;
+  -svg-background: linear-gradient(top, #344446 0, #273335 40%, #253032 50%, #273335 60%, #344446 100%) no-repeat; }
+
+.web-copyring {
+  padding: 0;
+  margin: 0;
+  color: #B5E4ED;
+  font-size: 11px;
+  font-family: 'Droid Serif', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 77px; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,19 @@
+extends layout
+
+block content    
+    nav(class="main-menu")
+        ul(class="main-menu-wrap")
+            li(class="main-menu-item")
+                a(href="/") Главна
+            li(class="main-menu-item")
+                a(href="/prices") Ціни
+            li(class="main-menu-item item-active")
+                a(href="/enroll") Записатись на прийом
+    div(class="page-content")
+        include parts/enroll-form
+    link(rel='stylesheet', href='/css/jquery.datetimepicker.css')
+    link(rel='stylesheet', href='/css/enroll.css')
+    script(src="js/jquery.datetimepicker.full.js")
+    script(src="js/enroll.js")
+
+        

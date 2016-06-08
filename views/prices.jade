@@ -1,0 +1,31 @@
+extends layout
+
+block content    
+    div(id="site-wrap")
+        nav(class="main-menu")
+            ul(class="main-menu-wrap")
+                li(class="main-menu-item")
+                    a(href="/") Главна
+                li(class="main-menu-item item-active")
+                    a(href="/prices") Ціни
+                li(class="main-menu-item")
+                    a(href="/enroll") Записатись на прийом
+        div(class="page-content")
+            table.table-price-list.standart-table
+                tr
+                    th Назва послуги
+                    th Ціна послуги
+                each item in price_list
+                    if item.price != undefined
+                        tr.price-item
+                            td= item.name
+                            td= item.price
+                    else
+                        tr.price-item-group
+                            td= item.name
+                            td
+                        each subitem in item.list
+                            tr.price-subitem
+                                td= subitem.name
+                                td= subitem.price
+

@@ -1,0 +1,25 @@
+doctype html
+html(lang="ua")
+  head
+    title Результат запису
+    meta(charset="utf-8")
+    meta(name="description", content="This is cabinet")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    //[if lt IE 9]
+        <script src="js/html5.js"></script>
+        [endif]
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    div(id="site-wrap")
+        div(class="enroll-result-block")
+            h2 Ви успішно записані на прийом.
+            p Ім'я: #{name}
+            p Фамілія: #{surname}
+            p Email: #{email}
+            p Телефон: #{phone}
+            p Замітка: #{comment}
+            p Рік: #{year} 
+            p Місяць: #{month}
+            p День: #{day}
+            p Час: #{hour}

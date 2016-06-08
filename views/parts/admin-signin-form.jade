@@ -1,0 +1,6 @@
+form(class="admin-form", action="/admin-valide", method="post")
+    input(type="text", class="admin-form-field", name="username", placeholder="Логін", tabindex="1", autofocus="true")
+    input(type="password", class="admin-form-field", name="password", placeholder="Пароль", tabindex="2")
+    div(class="save-button-wrap")
+        button(class="admin-form-submit admin-standart-button", type="submit" tabindex="3") Увійти
+    div(class="form-error") Дані введено невірно
