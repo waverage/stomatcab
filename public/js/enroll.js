@@ -1,8 +1,10 @@
 var weekendDay;
+var host_name = "";
 
 $(document).ready(initScript);
 
 function initScript() {
+    host_name = "http://" + window.location.host;
     $.datetimepicker.setLocale('ua');
     $('#datetimepicker').datetimepicker({
         inline: true,

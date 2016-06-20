@@ -1,5 +1,8 @@
-$(function(){
+var host_name = "";
 
+$(function(){
+    host_name = "http://" + window.location.host;
+    //console.log(host_name);
     $.datetimepicker.setLocale('ua');
     $('#plane-timepicker').datetimepicker({
         inline: true,
@@ -37,7 +40,7 @@ $(function(){
 function fullingOption() {
 
     $.ajax({//hours option
-        url: 'http://localhost:3000/hours-work',
+        url: host_name + '/hours-work',
         method: 'GET',
         success: function( data ) {
             $('#slider-time-work').slider({
@@ -55,7 +58,7 @@ function fullingOption() {
     });
 
     $.ajax({//weekday option
-        url: 'http://localhost:3000/weekendday',
+        url: host_name + '/weekendday',
         method: 'GET',
         success: function( data ) {
             for( var i in data ) {
@@ -113,7 +116,7 @@ function initHandlers() {
             list: JSON.stringify(outputArr)
         };
         $.ajax({
-            url: 'http://localhost:3000/update-price-list',
+            url: host_name + '/update-price-list',
             method: 'POST',
             data: sendData,
             success: function( res ) {
@@ -179,7 +182,7 @@ function initHandlers() {
 
     $('#logout-btn').click(function(){
         $.ajax({
-            url: 'http://localhost:3000/admin-logout',
+            url: host_name + '/admin-logout',
             method: 'GET',
             success: function( res ){
                 if( res === "OK" ) {
@@ -230,7 +233,7 @@ function initHandlers() {
         }, 300);
         var list_client = [];
         $.ajax({
-            url: 'http://localhost:3000/client-list',
+            url: host_name + '/client-list',
             method: 'GET',
             success: function( res ) {
                 list_client = res;
@@ -276,7 +279,7 @@ function initHandlers() {
                 hour: $('.xdsoft_current.xdsoft_time').text()
             };
             $.ajax({
-                url: 'http://localhost:3000/enrolled',
+                url: host_name + '/enrolled',
                 method: 'POST',
                 data: sendData,
                 success: function( res ) {
@@ -313,7 +316,7 @@ function initHandlers() {
                 hour: $('.xdsoft_time.xdsoft_current').text() 
             };
             $.ajax({
-                url: 'http://localhost:3000/update-enroll',
+                url: host_name + '/update-enroll',
                 method: 'POST',
                 data: sendData,
                 success: function( res ) {
@@ -388,7 +391,7 @@ function initHandlers() {
             hour: $('.xdsoft_time.xdsoft_current').data('hour')
         };
         $.ajax({
-            url: 'http://localhost:3000/add-close-hour',
+            url: host_name + '/add-close-hour',
             method: 'POST',
             data: data,
             success: function( res ) {
@@ -407,7 +410,7 @@ function initHandlers() {
         };
 
         $.ajax({
-            url: 'http://localhost:3000/remove-close-hour',
+            url: host_name + '/remove-close-hour',
             method: 'POST',
             data: data,
             success: function( res ) {
@@ -426,7 +429,7 @@ function initHandlers() {
         };
 
         $.ajax({
-            url: 'http://localhost:3000/remove-enroll',
+            url: host_name + '/remove-enroll',
             method: 'POST',
             data: data,
             success: function( err, res ) {
@@ -455,7 +458,7 @@ function initHandlers() {
         };
 
         $.ajax({
-            url: 'http://localhost:3000/add-close-day',
+            url: host_name + '/add-close-day',
             method: 'POST',
             data: data,
             success: function( err, res ) {
@@ -470,7 +473,7 @@ function initHandlers() {
 
     $('button.day-function-open-day').click(function(e) {
         $.ajax({
-            url: 'http://localhost:3000/remove-close-day',
+            url: host_name + '/remove-close-day',
             method: 'POST',
             data: {
                 year: $('.xdsoft_date.xdsoft_current').data('year'),
@@ -534,7 +537,7 @@ function saveHoursWork( calback ) {
         end: $( "#slider-time-work" ).slider( "values", 1 )
     };
     $.ajax({
-        url: 'http://localhost:3000/hours-work',
+        url: host_name + '/hours-work',
         method: 'POST',
         data: data,
         success: function(res){
@@ -555,7 +558,7 @@ function saveWeekendDays( calback ) {
     };
 
     $.ajax({
-        url: 'http://localhost:3000/weekendday',
+        url: host_name + '/weekendday',
         method: 'POST',
         data: data,
         success: function() {
@@ -592,7 +595,7 @@ function getAllowTimesFromStartEnd() {
     var res = [];
     $.ajax({
         async: false,
-        url: 'http://localhost:3000/hours-work',
+        url: host_name + '/hours-work',
         method: 'GET',
         success: function( data ) {
             if( data.start < 0 || data.start > 23 ||
@@ -721,7 +724,7 @@ function updateTimeLine(  ) {
                 day: $('.xdsoft_date.xdsoft_current').data('date') 
             };
             $.ajax({
-                url: 'http://localhost:3000/get-close-hours-of-day',
+                url: host_name + '/get-close-hours-of-day',
                 method: 'POST',
                 data: data,
                 success: function( res ) {
@@ -738,7 +741,7 @@ function updateTimeLine(  ) {
 
 function uploadDayData( data, calback ) {
     $.ajax({
-        url: 'http://localhost:3000/enroll-list',
+        url: host_name + '/enroll-list',
         method: 'POST',
         data: data,
         success: calback,
@@ -758,7 +761,7 @@ function showInfo( element ) {
             hour: $('.xdsoft_time.xdsoft_current').data('hour')
         };
         $.ajax({
-            url: 'http://localhost:3000/get-close-hours-of-day',
+            url: host_name + '/get-close-hours-of-day',
             method: 'POST',
             data: data,
             success: function( res ) {
@@ -774,7 +777,7 @@ function showInfo( element ) {
             hour: $(element.target).text()
         };
         $.ajax({
-            url: 'http://localhost:3000/get-enroll',
+            url: host_name + '/get-enroll',
             method: 'POST',
             data: sendData,
             success: function( res ){
@@ -816,7 +819,7 @@ function showInfo( element ) {
 function updateHandlerDates() {
     var weekendDay;
     $.ajax({//weekday option
-        url: 'http://localhost:3000/weekendday',
+        url: host_name + '/weekendday',
         method: 'GET',
         success: function( data ) {
             var queryWeekend = '';
@@ -841,7 +844,7 @@ function updateHandlerDates() {
     });
 
     $.ajax({
-        url: 'http://localhost:3000/get-close-days',
+        url: host_name + '/get-close-days',
         method: 'GET',
         success: function( data ) {
             for( var i = 0; i < data.length; i++ ) {
@@ -862,7 +865,7 @@ function updateHandlerDates() {
     });
 
     $.ajax({
-        url: 'http://localhost:3000/get-close-hours-of-month',
+        url: host_name + '/get-close-hours-of-month',
         method: 'POST',
         data: {
             month: $('.xdsoft_date[data-date="1"]').data('month')
