@@ -157,7 +157,7 @@ block content
                     if item.price != undefined
                         tr.price-item
                             td(contenteditable="true")= item.name
-                            td(contenteditable="true")=item.price
+                            td.price-td(contenteditable="true")=item.price
                             td.price-list-button-td
                                 button(class="remove-service-item", title="Видалити послугу") -
                     else
@@ -172,7 +172,7 @@ block content
                             tr.price-subitem
                                    
                                 td(contenteditable="true")= subitem.name
-                                td(contenteditable="true")= subitem.price
+                                td.price-td(contenteditable="true")= subitem.price
                                 td.price-list-button-td
                                     button(class="remove-service-item", title="Видалити послугу") -
                                 td
