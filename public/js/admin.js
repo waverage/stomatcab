@@ -237,6 +237,7 @@ function initHandlers() {
             method: 'GET',
             success: function( res ) {
                 list_client = res;
+                $('#select-client option').remove();
                 for( var i = 0; i < res.length; i++ ) {
                     var new_opt = document.createElement('option');
                     new_opt.text = res[i].surname + " " + res[i].name;
