@@ -46,6 +46,10 @@
   float: right;
   margin-top: 70px; }
 
+.price-td {
+  font-size: 18px;
+}
+
 .main-title a {
   font-size: 32px;
   font-family: 'Droid Serif', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
