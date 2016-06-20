@@ -19,7 +19,7 @@ block content
         div.inside-window
             button.btn-close-inside-window
             h3 Список доступних послуг:
-            div
+            div.wrap-service-list
                 ul.service-list
                     each item in price_list
                         if item.price != undefined
@@ -181,6 +181,7 @@ block content
                 button#add-new-group-service(title="Додати групу послуг") Додати групу послуг
             div(class="save-button-wrap")
                 button(id="save-option-prices", class="admin-standart-button") Зберегти
+                span(class="save-option-message") Зміни збережено
         section(class="option-sections", id="history-section")
             a(name="history")
             h2(class="option-title") Історія прийомів

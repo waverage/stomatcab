@@ -28,6 +28,7 @@ $(function(){
     $('.xdsoft_calendar').unbind();
 
     setTimeout(function(){
+        $('td.xdsoft_current').removeClass('xdsoft_current');
         updateHandlerDates();
         updateTimeLine();
     }, 300);
@@ -116,6 +117,11 @@ function initHandlers() {
             method: 'POST',
             data: sendData,
             success: function( res ) {
+                $('#save-option-prices+span').css('opacity', '1');
+                    
+                setTimeout(function(){
+                    $('#save-option-prices+span').css('opacity', '0');
+                }, 4500);
             }
         });
     });

@@ -25,7 +25,8 @@ app.use(session({
   cookie: {
     maxAge: 360000
   },
-  store: new MongoStore({ url: 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/diplomna-session'})
+  //store: new MongoStore({ url: 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/diplomna-session'})
+  store: new MongoStore({ url: 'mongodb://buorn:wowa_word2011@ds023902.mlab.com:23902/stomatcab'})
 }));
 
 //app.use(app.router);
@@ -311,7 +312,69 @@ var price_list = [
   }
 ];
 
-mongoose.connect('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/diplomna');
+//mongoose.connect('mongodb://' + config.mongo.host + ':' + config.mongo.port + '/diplomna');
+mongoose.connect('mongodb://buorn:wowa_word2011@ds023902.mlab.com:23902/stomatcab');
+/*
+ var data = {
+     name: "Ігор",
+     surname: "Купро",
+     email: "kupro@mail.ru",
+     phone: "380937436227",
+     comment: "Потрібна вставка зуба",
+     year: "2016",
+     month: "5",
+     day: "3",
+     hour: "14:00",
+     price: "0",
+     object_type: "enroll"
+   };
+
+   var enr = new Enroll(data);
+
+   enr.save(function(err, enr){
+     if(err) throw new Error(err);
+   });*/
+/*
+Enroll.remove({
+    month: "5",
+    day: "7"
+  }, function( err ) {    
+    if( err ) throw new Error( err );
+  });*/
+
+  var enr = new Hours_work({
+    start: 8,
+    end: 18
+  });
+
+enr.save(function(err, res){});
+
+var datt = new WeekEndDays({
+  day0: true,
+  day1: false,
+  day2: false,
+  day3: false,
+  day4: false,
+  day5: false,
+  day6: true
+});
+datt.save(function(err, res){});
+
+var us = new User({
+  username: "admin",
+  password: "admin"
+});
+us.save(function(err, res){});
+
+Service_price.remove({}, function(err){});
+for( var i = 0; i < price_list.length; i++ ) {
+  var pp = new Service_price({
+    name: price_list[i].name,
+    price: price_list[i].price,
+    list: price_list[i].list
+  });
+  pp.save(function(err, res){});
+}
 
 app.post('/update-price-list', function(req, res, next) {
   Service_price.remove({}, function(err){});
@@ -419,6 +482,10 @@ app.post('/weekendday', function(req, res, next) {
 
 app.all('/', function(req, res, next) {
   res.render('index');
+});
+
+app.all('/about-us', function(req, res, next) {
+    res.render('about-us');
 });
 
 app.all('/prices', function(req, res, next) {
@@ -636,6 +703,7 @@ app.post('/enrolled', function(req, res, next) {
     price: req.body.price,
     object_type: "enroll"
   };
+  console.log(data);
 
   var enr = new Enroll(data);
 
@@ -647,10 +715,11 @@ app.post('/enrolled', function(req, res, next) {
   res.send(data);
 });
 
-http.createServer(app).listen(config.port, function(){
+var port = process.env.PORT || 3000;
+http.createServer(app).listen(port, function(){
   console.log(
     'Successfully connected to mongodb://' + config.mongo.host + ':' + config.mongo.port,
-    '\nExpress server listening on http://localhost:' + config.port
+    '\nExpress server listening on http://localhost:' + port
   );
 });
 

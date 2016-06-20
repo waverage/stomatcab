@@ -1,0 +1,5 @@
+Root User:     admin
+Root Password: WYTtS842XXGQ
+Database Name: stomatcabkv
+
+Connection URL: mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/

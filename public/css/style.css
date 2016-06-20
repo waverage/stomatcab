@@ -29,15 +29,16 @@
   overflow: hidden; }
 
 .web-header {
-  height: 200px;
+  height: 150px;
   background: url("../images/header.png") center top no-repeat; }
 
 .header-wrap {
   width: 1096px;
   margin: 0 auto;
-  height: 200px; }
+  height: 150px; }
 
 .image-logotip {
+  height: 165px;
   float: left; }
 
 .header-titles {
@@ -138,6 +139,7 @@
   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.15); }
 
 .web-footer {
+  position: relative;
   width: 1096px;
   margin: 0 auto;
   height: 77px;
@@ -233,7 +235,7 @@
 .form-title {
   text-align: center;
   font-size: 25px;
-  margin-top: 50px; }
+  margin-top: 30px; }
 
 .enroll-form-submit {
   display: block;
@@ -265,10 +267,7 @@
 
 .web-p {
   font-size: 20px;
-}
-
-.web-ul {
-  font-size: 20px;
+  text-align: justify;
 }
 
 .price-subitem td:first-child {
@@ -321,6 +320,56 @@
 .standart-table th {
     border-bottom-width: 2px;
     font-size: 18px;
+}
+
+.content-image {
+  width: 65%;
+  float: left;
+  margin-right: 20px;
+}
+
+.link-one {
+  position: absolute;
+  top: 42%;
+  left: 10px;
+  text-decoration: none;
+  color: #B5E4ED;
+}
+
+.main-h3 {
+  text-align: center;
+  font-size: 32px;
+}
+
+.web-ul {
+  font-size: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.web-ul li {
+  width: 30%;
+  height: 300px;
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px;
+
+}
+
+.web-ul li img {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 75%;
+
+}
+
+.web-ul li div {
+  text-align: center;
+}
+
+.clear-fix {
+  clear: both;
 }
 
 /*# sourceMappingURL=style.css.map */

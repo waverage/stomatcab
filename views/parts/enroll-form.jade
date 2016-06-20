@@ -1,17 +1,18 @@
 form(name="enroll-form", class="enroll-form")
-    h2(class="form-title") Заповніть всі поля
+    h2(class="form-title") Заповніть поля
     div(class="enroll-form-grups")
-        label(for="user-name") Ім'я
+        label(for="user-name") Ім'я*
         input(type="text", name="user-name", class="enroll-form-fields", placeholder="Ім'я")
     div(class="enroll-form-grups")
-        label(for="user-surname") Фамілія
+        label(for="user-surname") Фамілія*
         input(type="text", name="user-surname", class="enroll-form-fields", placeholder="Фамілія")
     div(class="enroll-form-grups")
-        label(for="user-email") e-mail
+        label(for="user-email") e-mail*
         input(type="email", name="user-email", class="enroll-form-fields", placeholder="e-mail")
     div(class="enroll-form-grups")
         label(for="user-phone") Телефон
-        input(type="tel", name="user-phone", pattern="380[0-9]{2}[0-9]{7}", class="enroll-form-fields", placeholder="Телефон")
+        input(type="tel", name="user-phone", class="enroll-form-fields", placeholder="Телефон")
+        // pattern="380[0-9]{2}[0-9]{7}",
     div(class="enroll-form-grups")
         label(for="user-comment") Замітка
         textarea( name="user-comment", class="enroll-form-area", placeholder="Замітка")

@@ -5,16 +5,18 @@ block content
         nav(class="main-menu")
             ul(class="main-menu-wrap")
                 li(class="main-menu-item")
-                    a(href="/") Главна
+                    a(href="/") Головна
                 li(class="main-menu-item item-active")
-                    a(href="/prices") Ціни
+                    a(href="/prices") Прейскурант
                 li(class="main-menu-item")
-                    a(href="/enroll") Записатись на прийом
+                    a(href="/about-us") Про нас
+                li(class="main-menu-item")
+                    a(href="/enroll") Запис на прийом
         div(class="page-content")
             table.table-price-list.standart-table
                 tr
                     th Назва послуги
-                    th Ціна послуги
+                    th Вартість послуги
                 each item in price_list
                     if item.price != undefined
                         tr.price-item
