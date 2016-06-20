@@ -1,10 +1,8 @@
 var weekendDay;
-var host_name = "";
 
 $(document).ready(initScript);
 
 function initScript() {
-    host_name = "http://" + window.location.host;
     $.datetimepicker.setLocale('ua');
     $('#datetimepicker').datetimepicker({
         inline: true,
@@ -31,7 +29,7 @@ function initScript() {
     days_elements = $('td.xdsoft_date');
 
     $.ajax({
-        url: 'http://localhost:3000/weekendday',
+        url: '/weekendday',
         method: 'GET',
         success: function( res ) {
             var queryWeekend = '';
@@ -89,7 +87,7 @@ function initScript() {
         }
 
         $.ajax({
-            url: 'http://localhost:3000/enrolled',
+            url: '/enrolled',
             method: "POST",
             data: postData,
             success: successEnrolled
@@ -119,7 +117,7 @@ function valideData( data ) {
 function updateHandlerDates() {
 
     $.ajax({
-        url: 'http://localhost:3000/get-close-days',
+        url: '/get-close-days',
         method: 'GET',
         success: function( data ) {
             for( var i = 0; i < data.length; i++ ) {
@@ -197,7 +195,7 @@ function updateTimeLine(  ) {
                 }
             }
             $.ajax({
-                url: 'http://localhost:3000/get-close-hours-of-day',
+                url: '/get-close-hours-of-day',
                 method: 'POST',
                 data: {
                     year: $('.xdsoft_date.xdsoft_current').data('year'),
@@ -218,12 +216,12 @@ function updateTimeLine(  ) {
 };
 
 function successEnrolled( res ) {
-    $(location).attr('href', 'http://localhost:3000/enroll-success');
+    $(location).attr('href', '/enroll-success');
 }
 
 function uploadDayData( data, calback ) {
     $.ajax({
-        url: 'http://localhost:3000/enroll-list',
+        url: '/enroll-list',
         method: 'POST',
         data: data,
         success: calback,
@@ -260,7 +258,7 @@ function getAllowTimesFromStartEnd() {
     var res = [];
     $.ajax({
         async: false,
-        url: 'http://localhost:3000/hours-work',
+        url: '/hours-work',
         method: 'GET',
         success: function( data ) {
             if( data.start < 0 || data.start > 23 ||
