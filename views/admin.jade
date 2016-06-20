@@ -121,7 +121,7 @@ block content
                     button(class="day-function-open-day admin-standart-button") Розблокувати день
                     button(class="day-function-cancel-enroll admin-standart-button") Відмінити прийом
                     button(class="day-function-new-enroll admin-standart-button") Записатись від імені клієнта
-                    button(class="day-function-calculate-price admin-standart-button") Обрахувати ціну прийому
+                    button(class="day-function-calculate-price admin-standart-button") Обрахувати вартість прийому
                 div(class="wrap-of-day-info")
                     h4(class="day-info-empy-title") Немає даних
                     div(class="day-info-comment-block") Коментар до години: 
@@ -143,7 +143,7 @@ block content
                             div Замітка: 
                             span
                         li(class="day-info-price")
-                            div Ціна прийому: 
+                            div Вартість прийому: 
                             span
         section(class="option-sections", id="price-list-section")
             a(name="price-list")
@@ -151,7 +151,7 @@ block content
             table.price-list.standart-table#price-list-table
                 tr
                     th Назва
-                    th Ціна
+                    th Вартість
                     td.price-list-button-td
                 each item in price_list
                     if item.price != undefined

@@ -44,9 +44,7 @@ function initScript() {
                 weekendDay = queryWeekend.slice(0, -1);
                 // Удалить последний символ(,)
                 var weekend = $( weekendDay );
-                //$('.xdsoft_day_of_week6,.xdsoft_day_of_week0');
                 weekend.addClass('xdsoft_disabled');
-                //weekend.addClass('xdsoft_weekend');
                 weekend.unbind();
             }
         }
