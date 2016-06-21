@@ -1,4 +1,4 @@
-var weekendDay;
+var weekendDay, prevent_key;
 
 $(document).ready(initScript);
 
@@ -95,8 +95,29 @@ function initScript() {
     });
 
     setTimeout(updateHandlerDates, 300);
-    $('.enroll-form-fields[type=tel]').keyup(function(){
-        delchar( $(this)[0] );
+
+    $('.enroll-form-fields[type=tel]').keydown(function(e){
+    	var value = e.key;
+	    var rep = /[0-9]/;
+
+	    if ( (rep.test(value) || value.length > 1) || (prevent_key == "Control" && (value == "v" || value == "м" || value == "V" || value == "М") ) ) { 
+	        prevent_key = value; 
+	        return true;
+	    } else {
+	        prevent_key = value;
+	    	return false;
+	    }
+    });
+    $('.enroll-form-fields[name=user-name], .enroll-form-fields[name=user-surname]').keydown(function(e){
+    	var value = e.key;
+	    var rep = /[0-9\.;":'/=!@#$%^&*\(\)_\+\<>,\\|\{\}\[\]? ]/; 
+	    if ( (rep.test(value) && value.length == 1) && !(prevent_key == "Control" && (value == "v" || value == "м" || value == "V" || value == "М") ) ) {
+	    	prevent_key = value;
+	        return false; 
+	    } else {
+	    	prevent_key = value;
+	    	return true;
+	    }
     });
 }
 
@@ -279,14 +300,4 @@ function getAllowTimesFromStartEnd() {
         }
     });
     return res;
-}
-
-function delchar(input) { 
-    var value = input.value; 
-    console.log(value);
-    var rep = /[-\.;":'/a-zA-Zа-яА-Я ]/; 
-    if (rep.test(value)) { 
-        value = value.replace(rep, ''); 
-        input.value = value; 
-    }
 }
