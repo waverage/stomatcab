@@ -3,6 +3,7 @@ var weekendDay;
 $(document).ready(initScript);
 
 function initScript() {
+
     $.datetimepicker.setLocale('ua');
     $('#datetimepicker').datetimepicker({
         inline: true,
@@ -92,8 +93,11 @@ function initScript() {
         });
         return false;
     });
+
     setTimeout(updateHandlerDates, 300);
-    
+    $('.enroll-form-fields[type=tel]').keyup(function(){
+        delchar( $(this)[0] );
+    });
 }
 
 function valideData( data ) {
@@ -275,4 +279,14 @@ function getAllowTimesFromStartEnd() {
         }
     });
     return res;
+}
+
+function delchar(input) { 
+    var value = input.value; 
+    console.log(value);
+    var rep = /[-\.;":'/a-zA-Zа-яА-Я ]/; 
+    if (rep.test(value)) { 
+        value = value.replace(rep, ''); 
+        input.value = value; 
+    }
 }
