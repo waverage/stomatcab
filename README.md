@@ -1,5 +1,5 @@
 ## Стоматологічний кабінет
 
-![Головна сторінка](./public/images/stomat.jpg)
+![Головна сторінка](/public/images/stomat.JPG)
 
-![Адмін панель](./public/images/stomat_admin.png)
+![Адмін панель](/public/images/stomat_admin.PNG)
